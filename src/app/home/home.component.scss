@@ -1,0 +1,71 @@
+.home-wrapper {
+    @supports(display: grid) {
+        grid-column: 2 / 6;
+        grid-row: 2 / 4;
+        display: grid;
+        height: 100%;
+        grid-columns: repeat(4, 1fr);
+        grid-rows: 1fr;
+        .cards {
+            grid-column: 2 / 5;
+            grid-row: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* see notes below */
+            grid-auto-rows: minmax(200px, auto);
+            grid-gap: 1rem;
+            background-color: #fff;// lightgreen;
+
+            .card {
+                /*height: 200px;*/
+                /*background: red;*/
+                border: 2px solid #e7e7e7;
+                border-radius: 4px;
+                padding: .5rem;
+                -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+                display: flex;
+                /* -webkit-box-orient: vertical; */
+                /* -webkit-box-direction: normal; */
+                -ms-flex-direction: column;
+                flex-direction: column;
+                position: relative;
+                color: #5d5e5e;
+              } /* li item */
+              
+              .thumbnail img {
+                fill: #c7c4c4;
+                height: 50px;
+                opacity: .25;
+                padding: 1.5rem;
+              }
+              
+              .card-content {
+                  font-size: .75rem;
+                  display: flex;
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: normal;
+                  -ms-flex-direction: column;
+                  flex-direction: column;
+                  -webkit-box-flex: 1;
+                  -ms-flex: 1;
+                  flex: 1;
+              }
+        }
+        aside {
+            grid-column: 1 / 5;
+            grid-row: 2;
+            background-color: orange;
+        }
+
+        @media (min-width: 670px) {
+            section {
+                grid-column: 2 / 5;
+                grid-row: 1;
+            }
+            aside {
+                grid-column: 1 / 2;
+                grid-row: 1;
+            }
+        }
+    }
+}
